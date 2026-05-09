@@ -358,8 +358,11 @@ Completed by Luis Centeno
 
 File: market.routes.js
 
-* Added getMarketSummary to the const = require('../controllers/market.controller')
-* Added marketRouter.get('/market/summary',getMarketSummary);
+* Added:
+getMarketSummary to the const = require('../controllers/market.controller')
+
+* * Added:
+marketRouter.get('/market/summary',getMarketSummary);
 
 
 file: market.controller.js
@@ -382,4 +385,6 @@ const getMarketSummary = async (req, res, next) => {
         next(error);
     }
 };
-* Added getMarketSummary to module.exports
+
+* * Added 
+getMarketSummary to module.exports
