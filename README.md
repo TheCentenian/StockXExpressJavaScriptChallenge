@@ -361,7 +361,7 @@ File: market.routes.js
 * Added:
 getMarketSummary to the const = require('../controllers/market.controller')
 
-* * Added:
+* Added:
 marketRouter.get('/market/summary',getMarketSummary);
 
 
@@ -386,5 +386,5 @@ const getMarketSummary = async (req, res, next) => {
     }
 };
 
-* * Added 
+* Added: 
 getMarketSummary to module.exports
