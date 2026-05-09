@@ -358,16 +358,16 @@ Completed by Luis Centeno
 
 File: market.routes.js
 
-* Added:
+Added:
 getMarketSummary to the const = require('../controllers/market.controller')
 
-* Added:
+Added:
 marketRouter.get('/market/summary',getMarketSummary);
 
 
 file: market.controller.js
 
-* Added:
+Added:
 const getMarketSummary = async (req, res, next) => {
     try {
         const totalTokens = (await tokenService.countTokens());
@@ -386,5 +386,5 @@ const getMarketSummary = async (req, res, next) => {
     }
 };
 
-* Added: 
+Added: 
 getMarketSummary to module.exports
