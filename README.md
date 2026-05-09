@@ -349,3 +349,37 @@ For questions and support:
 ---
 
 **Note**: This is a Proof of Concept (PoC) implementation. Production deployment requires additional security audits, compliance reviews, and infrastructure hardening.
+
+---
+
+JavaScript Challenge — take-home
+Add Market Summary Read-Only Endpoint
+Completed by Luis Centeno
+
+File: market.routes.js
+
+* Added getMarketSummary to the const = require('../controllers/market.controller')
+* Added marketRouter.get('/market/summary',getMarketSummary);
+
+
+file: market.controller.js
+
+* Added:
+const getMarketSummary = async (req, res, next) => {
+    try {
+        const totalTokens = (await tokenService.countTokens());
+        const totalTrades = (await marketService.getMarketData()).totalTrades;
+        const totalVolume = (await marketService.getMarketData()).totalVolume;
+        const generatedAt = Date().toString();
+
+        res.json({
+            totalTokens,
+            totalTrades,
+            totalVolume,
+            generatedAt
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+* Added getMarketSummary to module.exports

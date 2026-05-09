@@ -35,18 +35,17 @@ const marketService = {
     return await oracleService.getCurrentPrice(symbol);
   },
 
-  async getMarketStats(symbol) {
-    const price = await this.getCurrentPrice(symbol);
-    const history = await this.getPriceHistory(symbol, '24h');
+    async getMarketStats(symbol) {
+        const price = await this.getCurrentPrice(symbol);
+        const history = await this.getPriceHistory(symbol, '24h');
 
-    const prices = history.map(h => h.price);
-    const high = Math.max(...prices);
-    const low = Math.min(...prices);
-    const volume = history.reduce((sum, h) => sum + (h.volume || 0), 0);
-    const change = history.length > 0 
-      ? ((prices[prices.length - 1] - prices[0]) / prices[0]) * 100 
-      : 0;
-
+        const prices = history.map(h => h.price);
+        const high = Math.max(...prices);
+        const low = Math.min(...prices);
+        const volume = history.reduce((sum, h) => sum + (h.volume || 0), 0);
+        const change = history.length > 0
+            ? ((prices[prices.length - 1] - prices[0]) / prices[0]) * 100
+            : 0;
     return {
       symbol,
       price,
