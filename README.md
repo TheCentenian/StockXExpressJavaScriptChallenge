@@ -394,3 +394,10 @@ Added:
 ```
 getMarketSummary to module.exports
 ```
+Results:
+
+```
+totalTokens totalTrades totalVolume generatedAt
+----------- ----------- ----------- -----------
+        247        5432 12400000    Sat May 09 2026 19:27:46 GMT-0400 (Eastern Daylight Time)
+```
